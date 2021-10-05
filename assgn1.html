@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div a img {
+            width: 50px;
+            height: 50px;
+        }
+
+        td {
+            border: 2px double #cfcfcf;
+        }
+        .eightndnine td{
+            border:1px solid black;
+        }
+        .nobro td {
+            border: none;
+        }
+        #submit{
+            border-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <section style="background-color: yellow; height:300px ;width: auto">
+        <h1 style="background-color: red">This is a heading</h1>
+        <p style="background-color: green">This is a paragraph</p>
+    </section><br>
+    <div>
+        <label for="img-1">Create a link of an image:</label>
+        <a id="img-1" href="https://www.google.com/search?q=smiling+face&rlz=1C1CHBF_enIN925IN925&oq=smiling&aqs=chrome.1.69i57j0i433i512l5j0i512l3j0i433i512.3584j0j7&sourceid=chrome&ie=UTF-8" style="border:3px solid purple; padding: 35px 0px 0px 0px;">
+            <img src="smiling%20face.jpg" alt='Smiling face' height:200px width:300px>
+        </a><br><br>
+        <label for="img-2">No border around the image,but still a link:</label>
+        <a id="img-2" href="https://www.google.com/search?q=smiling+face&rlz=1C1CHBF_enIN925IN925&oq=smiling&aqs=chrome.1.69i57j0i433i512l5j0i512l3j0i433i512.3584j0j7&sourceid=chrome&ie=UTF-8" style="border:none;">
+            <img src="smiling%20face.jpg" alt='Smiling face'>
+        </a><br>
+    </div>
+    <br><br>
+
+    <section>
+        <h3>One column:</h3>
+        <table>
+            <tr>
+                <td>100</td>
+            </tr>
+        </table>
+        <h3>One row and three columns:</h3>
+        <table cellspacing=0>
+            <tr>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+            </tr>
+        </table>
+        <h3>Two rows and three columns:</h3>
+        <table cellspacing=0>
+            <tr>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>400</td>
+                <td>500</td>
+                <td>600</td>
+            </tr>
+        </table>
+    </section>
+    <br><br>
+
+    <div>
+        <h3>This table has no borders:</h3>
+        <table cellspacing=0>
+            <tr>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>400</td>
+                <td>500</td>
+                <td>600</td>
+            </tr>
+        </table>
+        <h3>And this table has no borders:</h3>
+        <table class="nobro">
+            <tr>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>400</td>
+                <td>500</td>
+                <td>600</td>
+            </tr>
+        </table>
+    </div><br><br>
+
+    <div>
+        <h3>Numbered list:</h3>
+        <ol>
+            <li>Apples</li>
+            <li>Bananas</li>
+            <li>Lemons</li>
+            <li>Oranges</li>
+        </ol>
+
+       <h3>Letters list:</h3>
+        <ol type="A">
+            <li>Apples</li>
+            <li>Bananas</li>
+            <li>Lemons</li>
+            <li>Oranges</li>
+        </ol>
+
+       <h3>Lowercase letters list:</h3>
+        <ol type="a">
+            <li>Apples</li>
+            <li>Bananas</li>
+            <li>Lemons</li>
+            <li>Oranges</li>
+        </ol>
+
+       <h3>Roman numbers list:</h3>
+        <ol type="I">
+            <li>Apples</li>
+            <li>Bananas</li>
+            <li>Lemons</li>
+            <li>Oranges</li>
+        </ol>
+
+       <h3>Lowercase Roman numbers list:</h3>
+        <ol type="i">
+            <li>Apples</li>
+            <li>Bananas</li>
+            <li>Lemons</li>
+            <li>Oranges</li>
+        </ol>
+    </div><br><br>
+    
+    <div>
+        <label for="user">Username: </label>
+        <input type="text" id="user" name="user">
+        <br>
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" name="pass">
+    </div>
+    <br><br>
+    
+    <div>
+        <form>
+            <input type="checkbox" id="box-1" name="box-1">
+            <label for="box-1">I have a bike</label>
+            <br>
+            <input type="checkbox" id="box-2" name="box-2">
+            <label for="box-2">I have a car</label>
+            <br><br>
+            <input id="submit" type="submit" value="Submit">
+        </form>
+    </div><br><br>
+    
+    <div class="eightndnine">
+        <table cellspacing=0>
+            <tr>
+                <td colspan="2" style="background-color:darkcyan">top</td>
+            </tr>
+            <tr>
+                <td style="background-color: darkgray; ;padding: 20px 20px 0px 0px">left</td>
+                <td style="background-color: lightgray;padding:20px 20px 0px 0px">right</td>
+            </tr>
+        </table>
+    </div>
+    <br><br>
+    
+    <div class="eightndnine">
+        <table cellspacing=0>
+            <tr>
+                <td style="background-color:lightgray">topleft</td>
+                <td style="background-color:darkgray">topright</td>
+            </tr>
+            <tr>
+                <td style="background-color: darkgray; ;padding: 20px 20px 0px 0px">botleft</td>
+                <td style="background-color: lightgray;padding:20px 20px 0px 0px">botright</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
