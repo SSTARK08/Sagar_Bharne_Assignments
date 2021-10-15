@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        #infobox {
+            border: 2px solid green;
+            position: relative;
+            height: 80px;
+            width: 20%;
+            left: 75%;
+            top: -400px;
+            border-radius: 15px;
+            padding: 10px;
+            font-size: 13.5px;
+        }
+
+    </style>
+    <script type="text/javascript">
+        function createtab() {
+            var nrows = document.getElementById('row').value;
+            var ncol = document.getElementById('col').value;
+            var theader = '<table border="1">\n';
+            var tbody = '';
+
+            for (var i = 0; i < nrows; i++) {
+                tbody += '<tr>';
+                for (var j = 0; j < ncol; j++) {
+                    tbody += '<td>';
+                    tbody += 'Row ' + (i + 1) + ' Column ' + (j + 1);
+                    tbody += '</td>';
+                }
+                tbody += '</tr>\n';
+            }
+            var tfooter = '</table>';
+            document.getElementById('tabcreation').innerHTML = theader + tbody + tfooter;
+        }
+
+        function clr() {
+            var cl = document.getElementById('txtfield').value;
+            var n = cl.length;
+            var s = cl.substring(0, n - 1);
+            // console.log(n);
+            //console.log(s);
+            document.getElementById('txtfield').value = s;
+        }
+
+        function mysummary() {
+            var tab = document.getElementById('pizzatab');
+            if (tab.style.display === 'none') {
+                tab.style.display = 'block';
+            } else {
+                tab.style.display = 'none';
+            }
+            tab.rows[0].cells[1].innerHTML = document.getElementById('uname').value;
+            tab.rows[1].cells[1].innerHTML = document.getElementById('mail').value;
+            tab.rows[2].cells[1].innerHTML = document.getElementById('addr').value;
+
+            var checkcount = 0;
+            var check1 = document.getElementById('top1');
+            if (check1.checked == true) {
+                tab.rows[3].cells[1].innerHTML += check1.value + '  ';
+                checkcount++;
+            }
+            var check2 = document.getElementById('top2');
+            if (check2.checked == true) {
+                tab.rows[3].cells[1].innerHTML += check2.value + '  ';
+                checkcount++;
+            }
+            var check3 = document.getElementById('top3');
+            if (check3.checked == true) {
+                tab.rows[3].cells[1].innerHTML += check3.value + '  ';
+                checkcount++;
+            }
+            var check4 = document.getElementById('top4');
+            if (check4.checked == true) {
+                tab.rows[3].cells[1].innerHTML += check4.value + ' ';
+                checkcount++;
+            }
+            var check5 = document.getElementById('top5');
+            if (check5.checked == true) {
+                tab.rows[3].cells[1].innerHTML += check5.value + '  ';
+                checkcount++;
+            }
+            var check6 = document.getElementById('top6');
+            if (check6.checked == true) {
+                tab.rows[3].cells[1].innerHTML += check6.value + '  ';
+                checkcount++;
+            }
+            var check7 = document.getElementById('top7');
+            if (check7.checked == true) {
+                tab.rows[3].cells[1].innerHTML += check7.value + '  ';
+                checkcount++;
+            }
+
+            var delcharge = 0;
+            var checkradio1 = document.getElementById('del');
+            var checkradio2 = document.getElementById('pick');
+            if (checkradio1.checked == true) {
+                tab.rows[4].cells[1].innerHTML = checkradio1.value;
+                delcharge = 5;
+            } else if (checkradio2.checked == true) {
+                tab.rows[4].cells[1].innerHTML = checkradio2.value;
+            }
+
+            var tip = document.getElementById('tip').value;
+            //console.log(checkcount);
+            //console.log(delcharge);
+            //console.log(10+1.5*checkcount+delcharge);
+            //console.log(1+parseFloat(tip));
+            var totprice = (10 + 1.5 * checkcount + delcharge) * (1 + parseFloat(tip));
+
+            //console.log(totprice);
+            tab.rows[5].cells[1].innerHTML = '$ ' + totprice;
+        }
+
+        function focusname() {
+            document.getElementById('infobox').innerHTML = 'This is the Name box. Plz enter your full name here.';
+        }
+
+        function blurmsg() {
+            document.getElementById('infobox').innerHTML = '<em>This area shows context-sensitive message when cursor is focused on a particular field. Select a field to see more info.</em>';
+        }
+
+        function focusmail() {
+            document.getElementById('infobox').innerHTML = 'This is the Email box. Plz enter your personal emailid here. Email id is used to contact and update you on the status of your delivery';
+        }
+
+        function focusextra() {
+            document.getElementById('infobox').innerHTML = 'You can choose additional toppings from the given. You choosed Extra Cheese.<br><br><em>Additional Charges apply</em>';
+        }
+
+        function focuspepp() {
+            document.getElementById('infobox').innerHTML = 'You can choose additional toppings from the given. You choosed Pepperoni.<br><br><em>Additional Charges apply</em>';
+        }
+
+        function focusolive() {
+            document.getElementById('infobox').innerHTML = 'You can choose additional toppings from the given. You choosed Olives.<br><br><em>Additional Charges apply</em>';
+        }
+
+        function focuspep() {
+            document.getElementById('infobox').innerHTML = 'You can choose additional toppings from the given. You choosed Pepper.<br><br><em>Additional Charges apply</em>';
+        }
+
+        function focusbacon() {
+            document.getElementById('infobox').innerHTML = 'You can choose additional toppings from the given. You choosed Bacon.<br><br><em>Additional Charges apply</em>';
+        }
+
+        function focustomato() {
+            document.getElementById('infobox').innerHTML = 'You can choose additional toppings from the given. You choosed Tomatoes.<br><br><em>Additional Charges apply</em>';
+        }
+
+        function focusmush() {
+            document.getElementById('infobox').innerHTML = 'You can choose additional toppings from the given. You choosed Mushrooms.<br><br><em>Additional Charges apply</em>';
+        }
+
+        function focusdel() {
+            document.getElementById('infobox').innerHTML = 'Choose to get the pizza delivered at your doorstep.<br><br><em>Additional Charges apply</em>';
+        }
+
+        function focuspick() {
+            document.getElementById('infobox').innerHTML = 'Choose to pick up pizza from your nearby store.<br><br><em><b>NO </b>Additional Charges apply</em>';
+        }
+
+        function focustip() {
+            document.getElementById('infobox').innerHTML = 'Plz select how much tip you  want to give.<br>Remember 50% of your tip is used for social cause.<br><br><em>Additional Charges apply</em>';
+        }
+
+        function focusaddr() {
+            document.getElementById('infobox').innerHTML = 'This is the Address box. Plz enter your current address here. Address is used to deliver the pizza to you.';
+        }
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="row">Enter the no of rows</label><br>
+        <input type="text" name="row" id="row" placeholder="rows"><br><br>
+        <label for="col">Enter the no of cols</label><br>
+        <input type="text" id="col" name="col" placeholder="columns"><br><br>
+        <input type="button" value="Create Table" name="submit" onclick='createtab();'>
+    </form>
+
+    <form id="calculator">
+        <h1>Calulator</h1>
+        <label for="txtfield">Enter the expression....</label><br>
+        <input type="text" id="txtfield" name="txtfield"><br><br>
+
+        <input type="button" value="CE" onclick="calculator.txtfield.value=''">
+        <input id="clear" type="button" value="C" onclick='clr();'>
+        <input type="button" value="." onclick="calculator.txtfield.value+='.'">
+        <input type="button" value="/" onclick="calculator.txtfield.value+='/'"><br><br>
+
+        <input type="button" value="7" onclick="calculator.txtfield.value+='7'">
+        <input type="button" value="8" onclick="calculator.txtfield.value+='8'">
+        <input type="button" value="9" onclick="calculator.txtfield.value+='9'">
+        <input type="button" value="x" onclick="calculator.txtfield.value+='*'"><br><br>
+
+        <input type="button" value="4" onclick="calculator.txtfield.value+='4'">
+        <input type="button" value="5" onclick="calculator.txtfield.value+='5'">
+        <input type="button" value="6" onclick="calculator.txtfield.value+='6'">
+        <input type="button" value="-" onclick="calculator.txtfield.value+='-'"><br><br>
+
+        <input type="button" value="3" onclick="calculator.txtfield.value+='7'">
+        <input type="button" value="2" onclick="calculator.txtfield.value+='8'">
+        <input type="button" value="1" onclick="calculator.txtfield.value+='9'">
+        <input type="button" value="+" onclick="calculator.txtfield.value+='+'"><br><br>
+
+        <input type="button" value="0" onclick="calculator.txtfield.value+='0'">
+        <input type="button" value="=" onclick="calculator.txtfield.value=eval(calculator.txtfield.value)">
+
+    </form><br><br><br><br>
+
+    <form id="pizzadel">
+        <label for="uname">Name</label><br>
+        <input type="text" id="uname" placeholder="Enter your name...." onfocus="focusname();" onblur="blurmsg();" required><br><br>
+        <label for="email">Email</label><br>
+        <input type="email" id="mail" placeholder="Enter your email...." onfocus="focusmail();" onblur="blurmsg();" required><br>
+
+        <p>Add your Toppings:</p>
+        <label for="top1">Extra Cheese</label>
+        <input type="checkbox" id="top1" name="topping" value="Extra_Cheese" onfocus="focusextra();" onblur="blurmsg();">
+
+        <label for="top2">Pepperoni</label>
+        <input type="checkbox" id="top2" name="topping" value="Pepperoni" onfocus="focuspepp();" onblur="blurmsg();">
+
+        <label for="top3">Olives</label>
+        <input type="checkbox" id="top3" name="topping" value="Olives" onfocus="focusolive();" onblur="blurmsg();">
+
+        <label for="top4">Pepper</label>
+        <input type="checkbox" id="top4" name="topping" value="Pepper" onfocus="focuspep();" onblur="blurmsg();">
+
+        <label for="top5">Bacon</label>
+        <input type="checkbox" id="top5" name="topping" value="Bacon" onfocus="focusbacon();" onblur="blurmsg();">
+
+        <label for="top6">Tomatoes</label>
+        <input type="checkbox" id="top6" name="topping" value="Tomatoes" onfocus="focustomato();" onblur="blurmsg();">
+
+        <label for="top7">Mushrooms</label>
+        <input type="checkbox" id="top7" name="topping" value="Mushrooms" onfocus="focusmush();" onblur="blurmsg();"> <br><br>
+
+        <p style="display: inline">How do you want to get your pizza? </p>
+        <label for="del">Delivery</label>
+        <input type="radio" value="Delivery" name="option" id="del" onfocus="focusdel();" onblur="blurmsg();" required>
+
+        <label for="pick">Pick-up</label>
+        <input type="radio" value="Pick-up" name="option" id="pick" onfocus="focuspick();" onblur="blurmsg();" required><br><br>
+
+        <label for="tip">Tip?</label>
+        <select name="tip" id="tip" onfocus="focustip();" onblur="blurmsg();">
+            <option value="0.15">15%</option>
+            <option value="0.20">20%</option>
+            <option value="0.25">25%</option>
+        </select><br>
+        <hr>
+
+        <label for="addr">Address</label><br>
+        <textarea name="addr" id="addr" cols="50" rows="5" placeholder="Plz enter your address...." onfocus="focusaddr();" onblur="blurmsg();" required></textarea><br>
+
+        <input type="Submit" value="Submit">
+        <input type="Reset" value="Reset">
+        <input type="button" value="Show Summary" onclick="mysummary();" onblur="blurmsg();">
+
+    </form><br>
+    <div>
+        <table id="pizzatab" style="display: none; border:1px solid black">
+            <tr>
+                <td>Customer Name : </td>
+                <td>efs</td>
+            </tr>
+            <tr>
+                <td>Customer Email : </td>
+                <td>efs</td>
+            </tr>
+            <tr>
+                <td>Customer Address : </td>
+                <td>dsfr</td>
+            </tr>
+            <tr>
+                <td>Toppings Selected : </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Delivery Option : </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>Total Price : </td>
+                <td>0.0</td>
+            </tr>
+
+        </table>
+        <div id="infobox"><em>This area shows context-sensitive message when cursor is focused on a particular field. Select a field to see more info.</em></div>
+    </div>
+
+    
+
+    <div id="tabcreation">
+    </div>
+    <script src="app_JS_assgn1.js"></script>
+</body>
+
+</html>
